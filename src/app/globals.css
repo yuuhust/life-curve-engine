@@ -1,0 +1,662 @@
+:root {
+  --bg: #f5f7f8;
+  --panel: #ffffff;
+  --text: #172026;
+  --muted: #5d6972;
+  --line: #d9e0e4;
+  --primary: #147d64;
+  --primary-dark: #0f5f4c;
+  --danger: #b33a3a;
+  --warning: #9b6a00;
+  --positive: #177245;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Arial,
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.secondaryButton {
+  background: #eef2f1;
+  color: var(--text);
+}
+
+.secondaryButton:hover {
+  background: #dfe7e5;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 28px 18px 48px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.header p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.two {
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+}
+
+.workflowSteps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+}
+
+.workflowSteps span {
+  background: #eef2f1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  padding: 8px 10px;
+}
+
+.workspaceSection {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.sectionHeader {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 4px;
+  padding-top: 18px;
+}
+
+.sectionHeader span {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sectionHeader h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.sectionHeader p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  padding: 18px;
+}
+
+.panel h2,
+.panel h3 {
+  margin: 0 0 12px;
+}
+
+.emptyState {
+  background: #f5f7f8;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 12px;
+}
+
+.emptyState p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.formHeader,
+.metricRow {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.dateField,
+.factorField {
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
+.dateField input,
+.factorField input {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.factorGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.factorField {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.factorTitle {
+  color: var(--text);
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+}
+
+.factorTitle small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.factorDescription {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 40px;
+}
+
+.score {
+  color: var(--primary);
+  font-size: 42px;
+}
+
+.curve {
+  display: block;
+  height: auto;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.curveTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tabButton {
+  background: #eef2f1;
+  color: var(--text);
+  padding: 8px 10px;
+}
+
+.tabButton:hover,
+.tabButton.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.curve line {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.curve path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.curve circle {
+  fill: var(--primary);
+}
+
+.lowerGrid {
+  margin-top: 16px;
+}
+
+.statusList,
+.explanationList {
+  display: grid;
+  gap: 10px;
+}
+
+.statusItem {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr auto auto;
+  padding: 8px 0;
+}
+
+.statusItem:last-child {
+  border-bottom: 0;
+}
+
+.positiveText {
+  color: var(--positive);
+}
+
+.warningText {
+  color: var(--warning);
+}
+
+.explanation {
+  border-left: 4px solid var(--line);
+  padding: 4px 0 4px 12px;
+}
+
+.explanation h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.explanation p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.explanation.positive {
+  border-left-color: var(--positive);
+}
+
+.explanation.warning {
+  border-left-color: var(--warning);
+}
+
+.explanation.critical {
+  border-left-color: var(--danger);
+}
+
+.storagePanel {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.storageActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.simulationPanel {
+  display: grid;
+  gap: 14px;
+}
+
+.simulationControls {
+  align-items: end;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) minmax(90px, 120px) auto auto;
+}
+
+.simulationControls label,
+.daysField {
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
+.simulationControls input,
+.simulationControls select,
+.daysField input {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.simulationResult {
+  border-left: 4px solid var(--primary);
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding-left: 12px;
+}
+
+.simulationResult strong {
+  font-size: 20px;
+}
+
+.comparisonGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.comparisonGrid div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+}
+
+.comparisonLabel {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.differenceList {
+  display: grid;
+  gap: 8px;
+}
+
+.differenceRow {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  padding: 8px 0;
+}
+
+.differenceRow:last-child {
+  border-bottom: 0;
+}
+
+.differenceRow span,
+.differenceRow small {
+  color: var(--muted);
+}
+
+.differenceRow small {
+  text-align: right;
+}
+
+.simulationResult p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.daysField {
+  max-width: 150px;
+}
+
+.reviewPanel {
+  display: grid;
+  gap: 14px;
+}
+
+.stageModePanel {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.stageModePanel select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  min-height: 38px;
+  min-width: 160px;
+  padding: 8px 10px;
+}
+
+.reviewGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reviewBlock,
+.trendBox {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+}
+
+.reviewBlock p,
+.trendBox p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.advicePanel {
+  display: grid;
+  gap: 12px;
+}
+
+.subSectionTitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+.adviceBlock {
+  border-left: 4px solid var(--line);
+  display: grid;
+  gap: 6px;
+  padding-left: 12px;
+}
+
+.adviceBlock.repair {
+  border-left-color: var(--warning);
+}
+
+.adviceBlock.reinforce,
+.adviceBlock.experiment {
+  border-left-color: var(--positive);
+}
+
+.adviceBlock p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.adviceBlock ul {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.planList {
+  display: grid;
+  gap: 10px;
+}
+
+.planCard {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+}
+
+.planHeader {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.planHeader select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  min-height: 34px;
+  padding: 6px 8px;
+}
+
+.planCard p,
+.planCard small {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.validationBox {
+  background: #f5f7f8;
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+}
+
+.validationBox p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.planStats {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .page {
+    padding: 22px 12px 36px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .factorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formHeader,
+  .metricRow,
+  .storagePanel,
+  .stageModePanel {
+    display: grid;
+  }
+
+  .simulationControls {
+    grid-template-columns: 1fr;
+  }
+
+  .comparisonGrid,
+  .differenceRow,
+  .reviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .differenceRow small {
+    text-align: left;
+  }
+}
+
+@media (max-width: 520px) {
+  button,
+  .tabButton {
+    width: 100%;
+  }
+
+  .workflowSteps {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
+  .score {
+    font-size: 34px;
+  }
+
+  .storageActions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .curveTabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .planHeader {
+    align-items: stretch;
+    display: grid;
+  }
+}
